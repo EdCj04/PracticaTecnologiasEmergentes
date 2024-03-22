@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de formularios en JavaScript</title>
+</head>
+<body>
+
+<form id="myForm">
+    <input type="text" name="username" placeholder="Nombre de usuario">
+    <input type="password" name="password" placeholder="Contraseña">
+    <button type="submit">Enviar</button>
+</form>
+
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita que se envíe el formulario
+
+        var username = this.elements["username"].value;
+        var password = this.elements["password"].value;
+
+        if (username === "" || password === "") {
+            alert("Por favor, complete todos los campos.");
+        } else {
+            alert("¡Formulario enviado con éxito!\nUsuario: " + username + "\nContraseña: " + password);
+            // Aquí puedes enviar los datos del formulario a un servidor utilizando AJAX o cualquier otro método
+        }
+    });
+</script>
+
+</body>
+</html>

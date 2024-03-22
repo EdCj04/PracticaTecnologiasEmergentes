@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM</title>
+</head>
+<body>
+
+<div id="container">
+    <p id="paragraph">Este es un párrafo.</p>
+</div>
+
+<script>
+    // Modificar un elemento existente
+    document.getElementById("paragraph").innerHTML = "Este es un párrafo modificado.";
+
+    // Crear un nuevo elemento
+    var newElement = document.createElement("p");
+    newElement.textContent = "Este es un nuevo párrafo.";
+    document.getElementById("container").appendChild(newElement);
+
+    // Eliminar un elemento
+    var elementToRemove = document.getElementById("paragraph");
+    elementToRemove.parentNode.removeChild(elementToRemove);
+</script>
+
+</body>
+</html>
+ 
